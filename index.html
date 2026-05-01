@@ -8,12 +8,29 @@
   </head>
   <body>
     <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Ervaring</a></li>
-        <li><a href="#">Vaardigheden</a></li>
-      </ul>
+      <div class="nav-container">
+        <div class="nav-logo">Jack Sparrow</div>
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Ervaring</a></li>
+          <li><a href="#">Vaardigheden</a></li>
+        </ul>
+      </div>
     </nav>
+    <script>
+      const navToggle = document.querySelector(".nav-toggle");
+      const navLinks = document.querySelector(".nav-links");
+      navToggle.addEventListener("click", function () {
+        const expanded = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", !expanded);
+        navLinks.classList.toggle("nav-open");
+      });
+    </script>
 
     <section class="hero">
       <h1>Jack Sparrow</h1>
@@ -22,6 +39,26 @@
         Welkom op de site van de meest beruchte piraat van de zeven zeeën.
         Ontdek zijn avonturen, ervaring en vaardigheden!
       </p>
+    </section>
+
+    <section class="about-section">
+      <div class="about-container">
+        <div class="about-img">
+          <img src="images/jack.avif" alt="Jack Sparrow" />
+        </div>
+        <div class="about-text">
+          <h2>Over Jack Sparrow</h2>
+          <p>
+            Kapitein Jack Sparrow is een legendarische piraat, bekend om zijn
+            sluwe streken, humor en avonturen op zee. Met zijn kompas dat altijd
+            naar zijn diepste verlangen wijst, weet hij zich uit de meest
+            benarde situaties te redden. Jack is niet alleen een meester in het
+            ontwijken van gevaar, maar ook een charismatische leider met een
+            uniek gevoel voor stijl.<br /><br />
+            “But why is the rum gone?”
+          </p>
+        </div>
+      </div>
     </section>
 
     <section class="grid-section">
